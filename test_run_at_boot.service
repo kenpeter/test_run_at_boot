@@ -1,0 +1,9 @@
+[Unit]
+Description=test_run_at_boot
+
+[Service]
+ExecStart=/home/ubuntu/misc/service/test_run_at_boot/start.sh
+
+[Install]
+WantedBy=multi-user.target
+
