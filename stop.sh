@@ -1,3 +1,3 @@
 #!/bin/sh
 
-forever stop test_run_at_boot.js
+forever stop /home/ubuntu/misc/service/test_run_at_boot/test_run_at_boot.js
