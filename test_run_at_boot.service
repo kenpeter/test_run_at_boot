@@ -1,8 +1,13 @@
 [Unit]
 Description=test_run_at_boot
+After=syslog.target
 
 [Service]
-ExecStart=/home/ubuntu/misc/service/test_run_at_boot/start.sh
+Type=forking
+PIDFile=/home/ubuntu/misc/service/test_run_at_boot/test_run_at_boot.pid
+ExecStart=/home/ubuntu/misc/service/test_run_at_boot/start.sh \
+  --pidfile /home/ubuntu/misc/service/test_run_at_boot/test_run_at_boot.pid
+Restart=on-abort
 
 [Install]
 WantedBy=multi-user.target
